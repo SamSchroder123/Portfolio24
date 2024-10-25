@@ -1,0 +1,13 @@
+{
+    "financialCalculator": {
+        "name": "Financial Calculator",
+        "imageSrc": "images/financialCalculator",
+        "link": "https://samschroder123.github.io/finance-calculator/"
+
+    },
+    "dailyPlanner": {
+        "name": "Daily Planner",
+        "imageSrc": "images/dailyPlanner",
+        "link": "https://samschroder123.github.io/Daily-Planner/"
+    }
+}

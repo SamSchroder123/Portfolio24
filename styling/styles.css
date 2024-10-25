@@ -20,3 +20,17 @@
 .underline{
     border-bottom: 2px solid black;
 }
+#projectArea{
+    margin: auto;
+    width: 80vw;
+    height: auto;
+    border: 2px solid black;
+}
+.projectsRow{
+    display: flex;
+    justify-content: center;
+}
+.project{
+    height: 100px;
+    width: auto;
+}

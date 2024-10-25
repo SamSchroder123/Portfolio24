@@ -1,3 +1,22 @@
 .centre {
     text-align: center;
 }
+/* .right {
+    text-align: right;
+    margin: 20px;
+    margin-right: 10%;
+}
+.left {
+    text-align: left;
+    margin: 20px;
+    margin-left: 10%;
+} */
+.flex {
+    display: flex;
+}
+.spaced{
+    justify-content: space-around;
+}
+.underline{
+    border-bottom: 2px solid black;
+}

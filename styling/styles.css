@@ -1,0 +1,85 @@
+.centre {
+  text-align: center;
+}
+/* .right {
+    text-align: right;
+    margin: 20px;
+    margin-right: 10%;
+}
+.left {
+    text-align: left;
+    margin: 20px;
+    margin-left: 10%;
+} */
+.flex {
+  display: flex;
+}
+.spaced {
+  justify-content: space-around;
+}
+.underline {
+  border-bottom: 2px solid black;
+}
+#projectArea {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+#projectArea > span {
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.project {
+  height: 100px;
+  width: auto;
+}
+
+.projectCard {
+  margin: 50px;
+  border-radius: 25px;
+  outline: 2px solid black;
+  outline-offset: 20px;
+}
+
+@keyframes grow {
+  from {
+  }
+  to {
+    padding: 20px;
+  }
+}
+
+.projectCard:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  transform: scale(1.2);
+}
+
+.projectCard > button {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectCard > * {
+  margin: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+}

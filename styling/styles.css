@@ -1,3 +1,7 @@
+body {
+  background-color: blanchedalmond;
+}
+
 .centre {
   text-align: center;
 }
@@ -30,6 +34,8 @@
   border-radius: 25px;
   display: flex;
   flex-direction: column;
+  background-color: azure;
+  box-shadow: 10px 5px 5px grey;
 }
 
 #projectArea > span {
@@ -45,22 +51,15 @@
 }
 
 .projectCard {
-  margin: 50px;
+  margin: 20px;
   border-radius: 25px;
-  outline: 2px solid black;
-  outline-offset: 20px;
-}
-
-@keyframes grow {
-  from {
-  }
-  to {
-    padding: 20px;
-  }
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
 }
 
 .projectCard:hover {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(0deg, #23a6d5, #23d5ab);
   transform: scale(1.2);
 }
 

@@ -1,5 +1,5 @@
 body {
-  background-color: blanchedalmond;
+  background-color: slategrey;
 }
 
 .centre {
@@ -60,7 +60,7 @@ body {
 
 .projectCard:hover {
   background: linear-gradient(0deg, #23a6d5, #23d5ab);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 #github:hover {

@@ -5,6 +5,9 @@ const url = require("url");
 const slugify = require("slugify");
 const express = require("express");
 const path = require("path");
+
+function getProjectPage() {}
+
 const app = express();
 
 const replaceTemplate = require("./modules/replaceTemplate");
@@ -12,6 +15,7 @@ const replaceTemplate = require("./modules/replaceTemplate");
 const data = fs.readFileSync(`${__dirname}/projects.json`, "utf-8");
 const dataObject = JSON.parse(data);
 console.log(dataObject);
+const projectsArr = dataObject.projects;
 
 const home = fs.readFileSync(`${__dirname}/templates/index.html`, "utf-8");
 const projectCard = fs.readFileSync(
@@ -29,10 +33,10 @@ app.get("/", (req, res) => {
   });
   projectsHtml = () => {
     let output = "";
-    for (let i = 0; i < Object.keys(dataObject).length; i += 3) {
-      const rowHtml = Object.keys(dataObject)
+    for (let i = 0; i < projectsArr.length; i += 3) {
+      const rowHtml = projectsArr
         .slice(i, i + 3)
-        .map((el) => replaceTemplate(projectCard, dataObject[el]))
+        .map((el) => replaceTemplate(projectCard, projectsArr[i]))
         .join("");
       output = output + `<span>${rowHtml}</span>`;
     }

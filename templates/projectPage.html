@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Samuel T Schroder</title>
+    <title>{%PROJECTNAME%}</title>
     <link rel="icon" href="images/academic-cap.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styling/styles.css" />
   </head>
@@ -29,7 +29,22 @@
         <h2 id="currentDate" class="underline"></h2>
         <h2 id="publishDate" class="underline"></h2>
       </div>
-      <div id="projectArea" class="spaced">{%PROJECTS%}</div>
+      <div id="projectPageContainer" class="spaced">
+        <img
+          src="{%IMGSRC%}"
+          style="
+            width: 400px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <h2 style="text-align: center">links:</h2>
+        <ul>
+          <a href="{%PROJECTLINK%}"><li>Deployed Link</li></a>
+          <a href="{%REPOLINK%}"><li>Repository Link</li></a>
+        </ul>
+      </div>
     </header>
     <main></main>
     <footer></footer>

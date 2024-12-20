@@ -28,6 +28,10 @@ const projectPage = fs.readFileSync(
   `${__dirname}/templates/projectPage.html`,
   "utf-8"
 );
+const projectNotFoundPage = fs.readFileSync(
+  `${__dirname}/templates/projectNotFound.html`,
+  "utf-8"
+);
 // Serve static files from the 'images' and 'styling' folders
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/styling", express.static(path.join(__dirname, "styling")));
@@ -47,7 +51,6 @@ app.get("/", (req, res) => {
     }
     return output;
   };
-  console.log(projectsHtml);
   const output = home.replace("{%PROJECTS%}", projectsHtml);
   res.end(output);
 });
@@ -62,48 +65,10 @@ app.get("/project/*", (req, res) => {
     projectIndex = projectSlugsArr.indexOf(projectRequested);
     const outputHtml = replaceTemplate(projectPage, projectsArr[projectIndex]);
     res.end(outputHtml);
+  } else {
+    res.end(projectNotFoundPage);
   }
 });
-
-// const server = http.createServer((req, res) => {
-//   const { query, pathname } = url.parse(req.url, true);
-//   console.log(query, pathname);
-
-//   // overview page
-//   if (pathname === "/" || pathname === "/home") {
-//     res.writeHead(200, {
-//       "content-type": "text/html",
-//     });
-//     projectsHtml = Object.keys(dataObject)
-//       .map((el) => replaceTemplate(projectCard, dataObject[el]))
-//       .join("");
-//     console.log(projectsHtml);
-//     const output = home.replace("{%PROJECTS%}", projectsHtml);
-//     res.end(output);
-
-//     // product page
-//   } else if (pathname === "/product") {
-//     const product = dataObject[query.id];
-//     console.log(product);
-//     const output = replaceTemplate(templateProduct, product);
-//     res.end(output);
-
-//     // api
-//   } else if (pathname === "/api") {
-//     res.writeHead(200, {
-//       "Content-type": "application/json",
-//     });
-//     res.end(data);
-
-//     // page not found page
-//   } else {
-//     res.writeHead(404, {
-//       "content-type": "text/html",
-//       "my-own-header": "hello-world",
-//     });
-//     res.end("<h1>Page not found</h1>");
-//   }
-// });
 
 app.listen(8000, "127.0.0.1", () => {
   console.log("listening to requests on port 8000");
